@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My guessing game </title>
+</head>
+
+<body>
+	<h1>Guessing Game</h1>
+    <form>
+        <label>Enter your guess</label>
+        <input type="text" id="yourGuess" placeholder="0-9" pattern="[0-9]">
+        <input type="button" id="submit guess" value="Validate" onclick="validate()">
+    </form>
+    <script type="text/javascript">
+    	var guess=0;
+    	var y=Math.floor((Math.random()*10+1));
+    	window.console.log(y);
+    	function validate()
+    	{
+    		
+    		
+    		//console.log(guess);
+    		//console.log(y);
+    		var flag=0;
+    		var x=document.getElementById("yourGuess").value;
+    		//console.log(x);
+    		if(x==y){
+    			alert("Your guess is correct");
+    			guess=0;
+    			y=Math.floor((Math.random()*10+1));
+    			//console.log(y);
+    		}
+    		else{
+    			alert("Your guess is wrong chances left is :"+(2-guess));
+    			guess=guess+1;
+    		}
+   
+    		if(guess==3){
+    			alert("Sorry maximum chances exceeded The number was :"+y);
+    			y=Math.floor((Math.random()*10+1));
+    			//console.log(y);
+    			guess=0;
+    		}
+    	}
+     </script>
+    </form>
+</body>
+
+</html>
